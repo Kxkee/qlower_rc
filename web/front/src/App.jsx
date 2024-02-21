@@ -42,12 +42,11 @@ function App() {
 
   const submitArticle = async () => {
     try {
-      const res = await axios.post(`${import.meta.env.VITE_DJANGO_URL}articlep/`, {
+        await axios.post(`${import.meta.env.VITE_DJANGO_URL}articlep/`, {
         author: author,
         topic: topic,
         body: body
       });
-      console.log('Article submitted !', res.data);
       getArticles();
       setAuthor('');
       setTopic('');
